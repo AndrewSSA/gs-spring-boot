@@ -11,5 +11,6 @@ pipeline {
         }
         stage('Save Artifact') {
             archiveArtifacts artifacts: 'initial/target/*.jar', fingerprint: true
+        }
+    }
 }
-        

@@ -8,12 +8,16 @@ pipeline {
             steps {
                 sh 'mvn -f initial/pom.xml clean install'
             }
+        }
         stage('Artifacts') {
             steps {
-                archiveArtifacts artifacts: initial/target/*.jar
-            }
-        }        
+                archiveArtifacts artifacts: initial/target/\*.jar
+                }
         }
     }
 }
+                
+            
+        
+
 

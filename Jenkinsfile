@@ -8,7 +8,8 @@ pipeline {
             steps {
                 sh 'mvn -f initial/pom.xml clean install'
             }
+        }
         stage('Save Artifact') {
-            archiveArtifacts artifacts: 'initial/target/*.jar', fingerprint: tru
+            archiveArtifacts artifacts: 'initial/target/*.jar', fingerprint: true
 }
         

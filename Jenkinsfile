@@ -9,9 +9,10 @@ pipeline {
                 sh 'mvn -f initial/pom.xml clean install'
             }
         }
-        stage('Save Artifact') {
+        stage('Save Artifact&Job end notify') {
             steps {
-            archiveArtifacts artifacts: 'initial/target/*.jar', fingerprint: true
+                archiveArtifacts artifacts: 'initial/target/*.jar', fingerprint: true
+                telegramSend 'Job End'
             }
         }
     }

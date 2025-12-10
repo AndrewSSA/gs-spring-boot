@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Notification'){
             steps{
-                telegramSend(message: 'Hello World', chatId: -661605504)
+                telegramSend(message: 'Hello World', chatId: 661605504)
             }
         }
     }

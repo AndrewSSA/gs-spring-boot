@@ -9,9 +9,13 @@ pipeline {
                 sh 'mvn -f initial/pom.xml clean install'
             }
         }
-        stage('Save Artifact&Job end notify') {
+        stage('Save Artifact') {
             steps {
                 archiveArtifacts artifacts: 'initial/target/*.jar', fingerprint: true
+            }
+        }
+        stage('Notification'){
+            steps{
                 telegramSend(message: 'Hello World', chatId: -661605504)
             }
         }

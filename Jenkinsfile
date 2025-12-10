@@ -12,7 +12,7 @@ pipeline {
         stage('Save Artifact&Job end notify') {
             steps {
                 archiveArtifacts artifacts: 'initial/target/*.jar', fingerprint: true
-                telegramSend(message: 'Hello World', chatId: -5050415058)
+                telegramSend(message: 'Hello World', chatId: -661605504)
             }
         }
     }
